@@ -1,15 +1,14 @@
-plugins {
-    alias(libs.plugins.androidApplication)
-}
+apply plugin: 'com.android.application'
 
 android {
-    namespace 'com.ppy.qt'
-    compileSdk 34
+    compileSdkVersion 30 // 建议选 30 及以下（AGP 4.2.x 对高版本 SDK 支持更好）
+    buildToolsVersion "30.0.3" // 需与 compileSdkVersion 匹配（可在 SDK Manager 中下载）
+
 
     defaultConfig {
         applicationId "com.ppy.qt"
-        minSdk 24
-        targetSdk 34
+        minSdkVersion 21 // 你的最小支持版本
+        targetSdkVersion 30 // 与 compileSdkVersion 一致
         versionCode 1
         versionName "1.0"
 
@@ -30,10 +29,4 @@ android {
 
 dependencies {
     implementation project(':qtmm')
-
-    implementation libs.appcompat
-    implementation libs.material
-    testImplementation libs.junit
-    androidTestImplementation libs.ext.junit
-    androidTestImplementation libs.espresso.core
 }
