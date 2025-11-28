@@ -8,6 +8,8 @@ android {
         minSdk 21
         applicationId "com.ppy.qtmm"
 
+
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
